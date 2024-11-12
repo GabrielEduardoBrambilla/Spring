@@ -28,7 +28,13 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<Product> create(@RequestBody Product product){
-        return ResponseEntity.status(HttpStatus.OK).body(productService.save(product));
+        try {
+
+            return ResponseEntity.status(HttpStatus.OK).body(productService.save(product));
+
+        }catch(Exception error){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+        }
     }
 
     @PutMapping
