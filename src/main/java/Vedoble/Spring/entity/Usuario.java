@@ -8,13 +8,10 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Produto {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
-    private String categoria;
-    private Integer preco;
-    private String fabricante;
-
+    private Integer idade;
 }
