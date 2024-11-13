@@ -1,6 +1,6 @@
 package Vedoble.Spring.controller;
 
-import Vedoble.Spring.model.Product;
+import Vedoble.Spring.entity.Product;
 import Vedoble.Spring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,9 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    public ResponseEntity<List<Product>> findAll(){
+    @GetMapping("/")
+    public ResponseEntity<List<Product>> findStuff(){
+        System.out.println("Tst");
         return ResponseEntity.status(HttpStatus.OK).body(productService.findAll());
     }
 
@@ -29,11 +31,9 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<Product> create(@RequestBody Product product){
         try {
-
             return ResponseEntity.status(HttpStatus.OK).body(productService.save(product));
-
         }catch(Exception error){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 

@@ -1,4 +1,4 @@
-package Vedoble.Spring.model;
+package Vedoble.Spring.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

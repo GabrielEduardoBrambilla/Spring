@@ -1,9 +1,11 @@
 package Vedoble.Spring.service;
 
-import Vedoble.Spring.model.Product;
+import Vedoble.Spring.entity.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 
 public interface ProductService {
 
